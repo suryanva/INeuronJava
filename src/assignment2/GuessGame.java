@@ -9,11 +9,16 @@ class Guesser
     public int guessNumber()
     {
         Scanner scan=new Scanner(System.in);
-
-
-        System.out.println("Guesser kindly guess the number");
+        System.out.println("Guesser kindly guess the number between 1 and 10 only");
         guessNum=scan.nextInt();
-        return guessNum;
+        while(true) {
+            if (guessNum > 0 && guessNum < 11) {
+                return guessNum;
+            } else {
+                System.out.println("Number out of range please try again with values between 1 and 10");
+                guessNum = scan.nextInt();
+            }
+        }
 
     }
 
@@ -28,7 +33,14 @@ class Player
         Scanner scan=new Scanner(System.in);
         System.out.println("Player kindly guess the number");
         pguessNum=scan.nextInt();
-        return pguessNum;
+        while(true) {
+            if (pguessNum > 0 && pguessNum < 11) {
+                return pguessNum;
+            } else {
+                System.out.println("Dear Player Number out of range please try again with values between 1 and 10");
+                pguessNum = scan.nextInt();
+            }
+        }
     }
 }
 
